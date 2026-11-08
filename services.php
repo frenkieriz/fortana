@@ -140,7 +140,7 @@
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.php" class="logo d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/Fortana.png" alt="" class="logo">
       </a>
 
@@ -148,11 +148,11 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="about.php">About</a></li>
-          <li><a href="services.php" class="active">Our Business</a></li>
-          <li><a href="projects.php">Portfolio</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active">Our Business</a></li>
+          <li><a href="projects.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -167,7 +167,7 @@
 
         <h2>Our Business</h2>
         <ol>
-          <li><a href="index.php">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li>Our Business</li>
         </ol>
 
@@ -188,7 +188,7 @@
               </div>
               <h3>Compressor & Chiller Solution</h3>
               <p>Whole One Stop Support For Your Compressor & Chiller Need</p>
-              <a href="service-details.php" class="learn-more-btn stretched-link">
+              <a href="service-details.html" class="learn-more-btn stretched-link">
                 Learn more <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -202,7 +202,7 @@
               </div>
               <h3>Energy & Automation Service</h3>
               <p>Real Benefit For Digitalized Energy Project To Gain Profit & Green Compliance</p>
-              <a href="service-details 2.php" class="learn-more-btn stretched-link">
+              <a href="service-details 2.html" class="learn-more-btn stretched-link">
                 Learn more <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -216,7 +216,7 @@
               </div>
               <h3>Me & Building Construction</h3>
               <p>Various project handling with reliable safety & high quality of works</p>
-              <a href="service-details 3.php" class="learn-more-btn stretched-link">
+              <a href="service-details 3.html" class="learn-more-btn stretched-link">
                 Learn more <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -238,7 +238,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <a href="index.php"><img src="assets/img/Fortana Footer.png" class="img-fluid" alt="" width="200px" height="250px"></a>
+              <a href="index.html"><img src="assets/img/Fortana Footer.png" class="img-fluid" alt="" width="200px" height="250px"></a>
               <p>
                 Kampung Kedaung RT03 RW01 <br>
                 Kedung Jaya Babelan West Java 17610, Indonesia<br><br>
@@ -255,18 +255,18 @@
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Company</h4>
             <ul>
-              <li><a href="index.php">Home</a></li>
-              <li><a href="about.php">About us</a></li>
-              <li><a href="services.php">Services</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="services.html">Services</a></li>
             </ul>
           </div><!-- End footer links column-->
 
           <div class="col-lg-3 col-md-3 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><a href="service-details.php">Compressor & Chiller Solution</a></li>
-              <li><a href="service-details 2.php">Energy & Automation Service</a></li>
-              <li><a href="service-details 3.php">Me & Building Construction</a></li>
+              <li><a href="service-details.html">Compressor & Chiller Solution</a></li>
+              <li><a href="service-details 2.html">Energy & Automation Service</a></li>
+              <li><a href="service-details 3.html">Me & Building Construction</a></li>
             </ul>
           </div><!-- End footer links column-->
 

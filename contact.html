@@ -128,10 +128,28 @@
       font-size: 12px;
       border-radius: 8px;
       border: 1px solid #cbd5e1;
-      padding: 7px 10px;
-      margin-bottom: 10px;
+      padding: 8px 12px;
+      margin-bottom: 12px;
       width: 100%;
       background-color: #fff;
+    }
+
+    /* Compact Email Inquiry Form inside Card 3 */
+    .compact-email-form .form-control {
+      font-size: 12.5px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      padding: 8px 12px;
+      background-color: #f8fafc;
+      color: #1e293b;
+      transition: all 0.2s ease;
+    }
+
+    .compact-email-form .form-control:focus {
+      background-color: #ffffff;
+      border-color: #feb900;
+      box-shadow: 0 0 0 3px rgba(254, 185, 0, 0.18);
+      outline: none;
     }
 
     .card-action-group {
@@ -144,9 +162,9 @@
     .btn-card-act {
       flex: 1;
       min-width: 90px;
-      padding: 8px 10px;
+      padding: 9px 12px;
       border-radius: 8px;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 600;
       border: 1px solid #cbd5e1;
       background: #f8fafc;
@@ -154,7 +172,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 5px;
+      gap: 6px;
       text-decoration: none;
       transition: all 0.2s ease;
       cursor: pointer;
@@ -164,6 +182,19 @@
       background: #feb900;
       color: #000;
       border-color: #feb900;
+    }
+
+    .btn-gold-primary {
+      background: #feb900;
+      color: #1a1f24;
+      border-color: #feb900;
+      font-weight: 700;
+    }
+
+    .btn-gold-primary:hover {
+      background: #e5a700;
+      border-color: #e5a700;
+      color: #000;
     }
 
     /* Container Map Simetris 50%-50% */
@@ -180,7 +211,7 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
       width: 100%;
       height: 100%;
-      min-height: 480px;
+      min-height: 540px;
       flex-grow: 1;
       background: #e2e8f0;
     }
@@ -249,6 +280,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Our Business</a></li>
+          <li><a href="sample-inner-page.html">Our Activity</a></li>
           <li><a href="projects.html">Portfolio</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
@@ -309,7 +341,7 @@
                 </div>
               </div>
 
-              <!-- KARTU 2: Fast Response WhatsApp & Topic Selector -->
+              <!-- KARTU 2: Fast Response WhatsApp & Topic Selector (Tanpa Tombol Panggil) -->
               <div class="col-12">
                 <div class="dynamic-info-card">
                   <div>
@@ -333,40 +365,51 @@
                   </div>
 
                   <div class="card-action-group">
-                    <button onclick="sendWaMessage()" class="btn-card-act" style="background:#feb900; color:#000; border-color:#feb900;">
+                    <button onclick="sendWaMessage()" class="btn-card-act btn-gold-primary w-100">
                       <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
                     </button>
-                    <a href="tel:+628111134417" class="btn-card-act">
-                      <i class="bi bi-telephone"></i> Panggil
-                    </a>
                   </div>
                 </div>
               </div>
 
-              <!-- KARTU 3: Official Inquiry & Save vCard Contact -->
+              <!-- KARTU 3: Form Kirim Email Resmi -->
               <div class="col-12">
                 <div class="dynamic-info-card">
                   <div>
                     <div class="card-top-head">
                       <div class="card-icon-wrapper">
-                        <i class="bi bi-person-lines-fill"></i>
+                        <i class="bi bi-envelope-paper-fill"></i>
                       </div>
                       <div class="status-badge info">
-                        <span class="status-dot"></span> Official Support
+                        <span class="status-dot"></span> Official Inquiry
                       </div>
                     </div>
-                    <div class="card-main-title">Kontak & Digital Card</div>
-                    <div class="card-sub-desc mb-2">
-                      Simpan info kontak resmi PT Fortana Ayuri Nusantara langsung ke HP Anda atau kirim email.
+                    <div class="card-main-title">Kirim Email Resmi</div>
+                    <div class="card-sub-desc mb-3">
+                      Kirimkan pertanyaan proyek atau permintaan penawaran langsung ke tim kami.
                     </div>
-                  </div>
-                  <div class="card-action-group">
-                    <button onclick="downloadVCard()" class="btn-card-act">
-                      <i class="bi bi-person-plus-fill"></i> Simpan vCard (.vcf)
-                    </button>
-                    <a href="mailto:fortana.business@fortana-an.com" class="btn-card-act">
-                      <i class="bi bi-envelope"></i> Email Us
-                    </a>
+
+                    <form id="emailInquiryForm" class="compact-email-form" onsubmit="handleEmailSubmit(event)">
+                      <div class="row g-2 mb-2">
+                        <div class="col-sm-6">
+                          <input type="text" id="senderName" class="form-control" placeholder="Nama Anda" required>
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="email" id="senderEmail" class="form-control" placeholder="Email Anda" required>
+                        </div>
+                      </div>
+                      <div class="mb-2">
+                        <input type="text" id="emailSubject" class="form-control" placeholder="Subjek (Contoh: Penawaran Chiller / Proyek ME)" required>
+                      </div>
+                      <div class="mb-3">
+                        <textarea id="emailMessage" rows="3" class="form-control" placeholder="Tuliskan detail kebutuhan atau pertanyaan Anda..." required></textarea>
+                      </div>
+                      <div class="card-action-group">
+                        <button type="submit" class="btn-card-act btn-gold-primary w-100">
+                          <i class="bi bi-send-fill"></i> Kirim Pesan Email
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -409,7 +452,7 @@
               <p class="mt-3">
                 Kampung Kedaung RT03 RW01 <br>
                 Kedung Jaya Babelan West Java 17610, Indonesia<br><br>
-                <strong>Phone:</strong> +62 812 2277 4949, +62 811 1134 417<br>
+                <strong>Phone:</strong> +62 812 2277 4949, +62 853 6886 8622<br>
                 <strong>Email:</strong> fortana.business@fortana-an.com<br>
               </p>
               <div class="social-links d-flex mt-3">
@@ -429,11 +472,11 @@
           </div><!-- End footer links column-->
 
           <div class="col-lg-3 col-md-3 footer-links">
-            <h4>Our Services</h4>
+            <h4>Our Business</h4>
             <ul>
-              <li><a href="service-details.html">Compressor & Chiller Solution</a></li>
-              <li><a href="service-details 2.html">Energy & Automation Service</a></li>
-              <li><a href="service-details 3.html">Me & Building Construction</a></li>
+              <li><a href="service-details.html">Utility Equipment Solution</a></li>
+              <li><a href="service-details 2.html">Energy Service Project</a></li>
+              <li><a href="service-details 3.html">Mechanical Electric & Building Construction</a></li>
             </ul>
           </div><!-- End footer links column-->
 
@@ -498,35 +541,32 @@
       window.open(url, '_blank');
     }
 
-    // 3. Download vCard Contact
-    function downloadVCard() {
-      const vcardData = 
-        "BEGIN:VCARD\n" +
-        "VERSION:3.0\n" +
-        "FN:PT. Fortana Ayuri Nusantara\n" +
-        "ORG:PT. Fortana Ayuri Nusantara\n" +
-        "TEL;TYPE=WORK,VOICE:+628111134417\n" +
-        "TEL;TYPE=WORK,VOICE:+6281222774949\n" +
-        "EMAIL:fortana.business@fortana-an.com\n" +
-        "ADR;TYPE=WORK:;;Kampung Kedaung RT03 RW01, Kedung Jaya;Babelan;Jawa Barat;17610;Indonesia\n" +
-        "END:VCARD";
+    // 3. Submit Form Email Resmi
+    function handleEmailSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('senderName').value.trim();
+      const email = document.getElementById('senderEmail').value.trim();
+      const subject = document.getElementById('emailSubject').value.trim();
+      const message = document.getElementById('emailMessage').value.trim();
 
-      const blob = new Blob([vcardData], { type: 'text/vcard' });
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.setAttribute('href', url);
-      a.setAttribute('download', 'Fortana_Ayuri_Nusantara.vcf');
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+      const body = `Halo Tim PT Fortana Ayuri Nusantara,\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`;
+      const mailtoLink = `mailto:fortana.business@fortana-an.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      showToast('Membuka aplikasi email Anda...');
+      window.location.href = mailtoLink;
     }
 
-    // 4. Salin Teks ke Clipboard
+    // 4. Salin Teks ke Clipboard & Tampilkan Toast
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 2500);
+    }
+
     function copyText(text) {
       navigator.clipboard.writeText(text).then(() => {
-        const toast = document.getElementById('toast');
-        toast.style.display = 'block';
-        setTimeout(() => { toast.style.display = 'none'; }, 2000);
+        showToast('Teks berhasil disalin!');
       });
     }
 

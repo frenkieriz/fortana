@@ -51,20 +51,33 @@
       border: 1px solid rgba(253, 184, 19, 0.4);
     }
 
-    /* Section Title Custom */
+    /* Section Title Custom - Pill Business Activities agak lebih besar & tulisan bawah agak lebih kecil */
     .section-title-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 5px 16px;
-      border-radius: 20px;
-      background: rgba(253, 184, 19, 0.15);
-      color: #d99b00;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1px;
+      gap: 10px;
+      padding: 10px 26px;
+      border-radius: 999px;
+      background: rgba(253, 184, 19, 0.16);
+      border: 1px solid rgba(253, 184, 19, 0.35);
+      color: #c88a00;
+      font-size: 0.96rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    .section-title-badge i {
+      font-size: 1.1rem;
+    }
+
+    .section-sub-heading {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #64748b;
+      margin: 0 auto;
+      max-width: 760px;
     }
 
     /* Perbaikan Posisi Tab & Garis Indikator Bawah */
@@ -234,6 +247,7 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Our Business</a></li>
+          <li><a href="sample-inner-page.html">Our Activity</a></li>
           <li><a href="projects.html">Portfolio</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -286,15 +300,15 @@
 
   <main id="main">
 
-    <!-- ======= Our Projects Section (Company Activities Grid Dynamic) ======= -->
+    <!-- ======= Our Projects Section (Business Activities Grid Dynamic) ======= -->
     <section id="projects" class="projects py-5">
       <div class="container" data-aos="fade-up">
 
         <div class="text-center mb-5">
           <div class="section-title-badge">
-            <i class="bi bi-activity"></i> Company Activities
+            <i class="bi bi-activity"></i> Business Activities
           </div>
-          <p class="text-muted">Empowering People and Driving Toward Excellence</p>
+          <p class="section-sub-heading">Empowering People and Driving Toward Excellence</p>
         </div>
 
         <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
@@ -562,11 +576,11 @@
           </div><!-- End footer links column-->
 
           <div class="col-lg-3 col-md-3 footer-links">
-            <h4>Our Services</h4>
+            <h4>Our Business</h4>
             <ul>
-              <li><a href="service-details.html">Compressor & Chiller Solution</a></li>
-              <li><a href="service-details 2.html">Energy & Automation Service</a></li>
-              <li><a href="service-details 3.html">Me & Building Construction</a></li>
+              <li><a href="service-details.html">Utility Equipment Solution</a></li>
+              <li><a href="service-details 2.html">Energy Service Project</a></li>
+              <li><a href="service-details 3.html">Mechanical Electric & Building Construction</a></li>
             </ul>
           </div><!-- End footer links column-->
 

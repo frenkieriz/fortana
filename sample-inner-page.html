@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>[Template] Sample Inner Page</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Our Activity - UpConstruction</title>
+  <meta content="Showcase of industrial activities across Compressor & Chiller Solution, Energy & Automation Service, and ME & Building Construction." name="description">
+  <meta content="Our Activity, Project Showcase, Compressor, Chiller, Automation, Construction" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -29,13 +29,199 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: UpConstruction
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Custom Styles -->
+  <style>
+    #projects .section-title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background-color: #fdf4dc;
+      color: #e09b00;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+
+    #projects .dynamic-title {
+      position: relative;
+      display: inline-block;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #16222c;
+      padding-bottom: 14px;
+      margin-bottom: 10px;
+    }
+
+    #projects .dynamic-title::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 56px;
+      height: 4px;
+      border-radius: 2px;
+      background-color: #f5a600;
+    }
+
+    #projects .dynamic-subtitle {
+      color: #637381;
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    #projects .portfolio-flters {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 34px;
+    }
+
+    #projects .portfolio-flters li {
+      cursor: pointer;
+      font-size: 1.02rem;
+      font-weight: 500;
+      color: #556473;
+      padding: 4px 2px 6px 2px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    #projects .portfolio-flters li:hover {
+      color: #f5a600;
+      border-bottom-color: transparent;
+    }
+
+    #projects .portfolio-flters li.filter-active,
+    #projects .portfolio-flters li.filter-active:hover {
+      color: #16222c;
+      font-weight: 700;
+      border-bottom: 2px solid #f5a600;
+    }
+
+    #projects .portfolio-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 24, 32, 0.08);
+      height: 100%;
+      aspect-ratio: 16 / 10;
+      background-color: #1b2025;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    #projects .portfolio-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(18, 24, 32, 0.14);
+    }
+
+    #projects .portfolio-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    #projects .portfolio-card:hover img {
+      transform: scale(1.04);
+    }
+
+    #projects .portfolio-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(15, 20, 26, 0.08) 0%,
+        rgba(15, 20, 26, 0.25) 45%,
+        rgba(15, 20, 26, 0.82) 100%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #projects .portfolio-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      background: rgba(24, 29, 35, 0.78);
+      color: #f8f9fa;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+      backdrop-filter: blur(4px);
+    }
+
+    #projects .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background: linear-gradient(180deg, rgba(120, 92, 18, 0.35) 0%, rgba(180, 134, 15, 0.55) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    #projects .portfolio-card:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    #projects .portfolio-overlay a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #2e3135;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    #projects .portfolio-overlay a:hover {
+      background: #feb900;
+      color: #1b2025;
+      transform: scale(1.07);
+    }
+
+    #projects .portfolio-content-info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 16px 18px;
+    }
+
+    #projects .portfolio-content-info h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    #projects .portfolio-content-info p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -54,29 +240,11 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="sample-inner-page.html">Our Activity</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
+          <li><a href="services.html">Our Business</a></li>
+          <li><a href="our-activity.html" class="active">Our Activity</a></li>
+          <li><a href="projects.html">Portfolio</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
@@ -90,28 +258,147 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/breadcrumbs-bg.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-        <h2>Sample Inner Page</h2>
+        <h2>Our Activity</h2>
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Sample Inner Page</li>
+          <li>Our Activity</li>
         </ol>
 
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <section class="sample-page">
-      <div class="container">
+    <!-- ======= Dynamic Interactive Portfolio Gallery ======= -->
+    <section id="projects" class="projects py-4">
+      <div class="container" data-aos="fade-up">
 
-        <p>
-          You can duplicate this sample page and create any number of inner pages you like!
-        </p>
+        <div class="text-center mb-3">
+          <div class="section-title-badge">
+            <i class="bi bi-briefcase"></i> Showcase of Excellence
+          </div>
+          <div>
+            <h2 class="dynamic-title">Project Showcase</h2>
+          </div>
+          <p class="dynamic-subtitle">Delivering Industrial Excellence Across Multiple Sectors</p>
+        </div>
+
+        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+
+          <!-- Category Filters -->
+          <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All Projects</li>
+            <li data-filter=".filter-compressor">Compressor &amp; Chiller Solution</li>
+            <li data-filter=".filter-energy">Energy &amp; Automation Service</li>
+            <li data-filter=".filter-construction">Me and Building Construction</li>
+          </ul><!-- End Projects Filters -->
+
+          <div class="row g-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Item 1: Compressor -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-compressor">
+              <div class="portfolio-card">
+                <span class="portfolio-badge">Compressor &amp; Chiller</span>
+                <img src="assets/img/projects/Project1.png" class="img-fluid" alt="Chiller System Maintenance">
+                <div class="portfolio-overlay">
+                  <a href="assets/img/projects/Project1.png" title="Chiller System Maintenance" data-gallery="portfolio-gallery-compressor" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="service-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+                <div class="portfolio-content-info">
+                  <h4>Chiller System Maintenance</h4>
+                  <p>Compressor &amp; Chiller Solution</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2: Energy -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-energy">
+              <div class="portfolio-card">
+                <span class="portfolio-badge">Energy &amp; Automation</span>
+                <img src="assets/img/projects/Project6.png" class="img-fluid" alt="Smart Energy Monitoring">
+                <div class="portfolio-overlay">
+                  <a href="assets/img/projects/Project6.png" title="Smart Energy Monitoring" data-gallery="portfolio-gallery-energy" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="service-details-2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+                <div class="portfolio-content-info">
+                  <h4>Smart Energy Monitoring</h4>
+                  <p>Energy &amp; Automation Service</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3: Construction -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
+              <div class="portfolio-card">
+                <span class="portfolio-badge">Construction</span>
+                <img src="assets/img/projects/Project3.png" class="img-fluid" alt="Industrial Piping & ME">
+                <div class="portfolio-overlay">
+                  <a href="assets/img/projects/Project3.png" title="Industrial Piping &amp; ME" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="service-details-3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+                <div class="portfolio-content-info">
+                  <h4>Industrial Piping &amp; ME</h4>
+                  <p>Me &amp; Building Construction</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 4: Compressor -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-compressor">
+              <div class="portfolio-card">
+                <span class="portfolio-badge">Compressor &amp; Chiller</span>
+                <img src="assets/img/projects/Project2.png" class="img-fluid" alt="Air Compressor Installation">
+                <div class="portfolio-overlay">
+                  <a href="assets/img/projects/Project2.png" title="Air Compressor Installation" data-gallery="portfolio-gallery-compressor" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="service-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+                <div class="portfolio-content-info">
+                  <h4>Air Compressor Installation</h4>
+                  <p>Compressor &amp; Chiller Solution</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 5: Energy -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-energy">
+              <div class="portfolio-card">
+                <span class="portfolio-badge">Energy &amp; Automation</span>
+                <img src="assets/img/projects/Project10.png" class="img-fluid" alt="PLC Automation Panel">
+                <div class="portfolio-overlay">
+                  <a href="assets/img/projects/Project10.png" title="PLC Automation Panel" data-gallery="portfolio-gallery-energy" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="service-details-2.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+                <div class="portfolio-content-info">
+                  <h4>PLC Automation Panel</h4>
+                  <p>Energy &amp; Automation Service</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 6: Construction -->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
+              <div class="portfolio-card">
+                <span class="portfolio-badge">Construction</span>
+                <img src="assets/img/projects/Project7.png" class="img-fluid" alt="Factory Ducting System">
+                <div class="portfolio-overlay">
+                  <a href="assets/img/projects/Project7.png" title="Factory Ducting System" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="service-details-3.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+                <div class="portfolio-content-info">
+                  <h4>Factory Ducting System</h4>
+                  <p>Me &amp; Building Construction</p>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
 
       </div>
-    </section>
+    </section><!-- End Portfolio Section -->
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
+  <!-- ======= Footer (Lengkap Utuh) ======= -->
   <footer id="footer" class="footer">
 
     <div class="footer-content position-relative">
@@ -120,63 +407,43 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3>UpConstruction</h3>
-              <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+              <a href="index.html"><img src="assets/img/Fortana Footer.png" class="img-fluid" alt="Fortana Footer Logo" width="200px"></a>
+              <p class="mt-3">
+                Kampung Kedaung RT03 RW01 <br>
+                Kedung Jaya Babelan West Java 17610, Indonesia<br><br>
+                <strong>Phone:</strong> +62 812 2277 4949, +62 853 6886 8622<br>
+                <strong>Email:</strong> fortana.business@fortana-an.com<br>
               </p>
               <div class="social-links d-flex mt-3">
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/fortana_an" class="d-flex align-items-center justify-content-center" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/fortana-ayuri-nusantara" class="d-flex align-items-center justify-content-center" target="_blank"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div><!-- End footer info column-->
 
           <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Company</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About us</a></li>
+              <li><a href="services.html">Services</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-3 col-md-3 footer-links">
+            <h4>Our Business</h4>
+            <ul>
+              <li><a href="service-details.html">Utility Equipment Solution</a></li>
+              <li><a href="service-details-2.html">Energy Service Project</a></li>
+              <li><a href="service-details-3.html">Mechanical Electric &amp; Building Construction</a></li>
+            </ul>
+          </div><!-- End footer links column-->
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Legal</h4>
+            <ul>
               <li><a href="#">Terms of service</a></li>
               <li><a href="#">Privacy policy</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Hic solutasetp</h4>
-            <ul>
-              <li><a href="#">Molestiae accusamus iure</a></li>
-              <li><a href="#">Excepturi dignissimos</a></li>
-              <li><a href="#">Suscipit distinctio</a></li>
-              <li><a href="#">Dilecta</a></li>
-              <li><a href="#">Sit quas consectetur</a></li>
-            </ul>
-          </div><!-- End footer links column-->
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Nobis illum</h4>
-            <ul>
-              <li><a href="#">Ipsam</a></li>
-              <li><a href="#">Laudantium dolorum</a></li>
-              <li><a href="#">Dinera</a></li>
-              <li><a href="#">Trodelas</a></li>
-              <li><a href="#">Flexo</a></li>
             </ul>
           </div><!-- End footer links column-->
 
@@ -187,20 +454,12 @@
     <div class="footer-legal text-center position-relative">
       <div class="container">
         <div class="copyright">
-          &copy; Copyright <strong><span>UpConstruction</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          &copy; Copyright <strong><span>Fortana Ayuri Nusantara</span></strong>. All Rights Reserved
         </div>
       </div>
     </div>
 
-  </footer>
-  <!-- End Footer -->
+  </footer><!-- End Footer -->
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -217,6 +476,30 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Category Filter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButtons = document.querySelectorAll('.portfolio-flters li');
+      const items = document.querySelectorAll('.portfolio-container .portfolio-item');
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', function () {
+          filterButtons.forEach((el) => el.classList.remove('filter-active'));
+          this.classList.add('filter-active');
+
+          const filterValue = this.getAttribute('data-filter');
+          items.forEach((item) => {
+            if (filterValue === '*' || item.matches(filterValue)) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 
 </body>
 

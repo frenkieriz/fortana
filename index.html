@@ -80,49 +80,45 @@
       max-width: 760px;
     }
 
-    /* Perbaikan Posisi Tab & Garis Indikator Bawah */
-    .portfolio-flters {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 35px;
-      border-bottom: none;
-      padding-bottom: 0;
-      margin-bottom: 45px;
+    /* Perbaikan Posisi Tab & Garis Indikator Bawah (Disamakan dengan Gambar 2) */
+    #projects .portfolio-flters {
       list-style: none;
+      padding: 0;
+      margin: 0 auto 24px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 34px;
+      border-bottom: none;
     }
 
-    .portfolio-flters li {
-      font-size: 1.02rem;
-      font-weight: 600;
-      color: #64748b;
-      position: relative;
+    #projects .portfolio-flters li {
       cursor: pointer;
-      padding-bottom: 10px;
-      transition: all 0.3s ease;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #556473;
+      position: relative;
+      padding: 4px 2px 6px 2px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
       background: transparent !important;
-      border: none !important;
       box-shadow: none !important;
     }
 
-    .portfolio-flters li:hover {
-      color: #1a1f24;
+    #projects .portfolio-flters li:hover {
+      color: #f5a600;
+      border-bottom-color: transparent;
     }
 
-    .portfolio-flters li.filter-active {
-      color: #1a1f24 !important;
+    #projects .portfolio-flters li.filter-active,
+    #projects .portfolio-flters li.filter-active:hover {
+      color: #16222c !important;
       font-weight: 700 !important;
+      border-bottom: 2px solid #f5a600 !important;
     }
 
-    .portfolio-flters li.filter-active::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 3.5px;
-      background: linear-gradient(90deg, #fdb813, #f5a623);
-      border-radius: 3px;
+    #projects .portfolio-flters li.filter-active::after {
+      display: none;
     }
 
     /* Modern Dynamic Activity Cards */
